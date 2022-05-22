@@ -8,9 +8,9 @@ import {
 
 const ContadorMejorado = () => {
   const [state, dispatch] = useReducer(
-    contadorReducer,
-    contadorInitialState,
-    contadorInit
+    contadorReducer, //funcion que modifica los estados
+    contadorInitialState, // valor inicial del obj con variables de estado
+    contadorInit //
   );
 
   const sumar = () => dispatch({ type: TYPES.INCREMENT });

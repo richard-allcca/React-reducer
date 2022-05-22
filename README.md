@@ -1,37 +1,58 @@
-# useReducer() 
-- Aqui encontraras conceptos generales y  3 ejemplos practicos 
+# React Reducer 
+
+- Aqui encontraras conceptos generales y  3 ejemplos practicos
+
+  - [useReducer](#usereducer)
+  - [reducer](#reducer)
+  - [dispatch](#dispatch)
+  - [state](#state)
+
 1. Carro de compras con reducer
 2. Crud con Reducer, Importante utiliza json-server como DB sin esto falla la carga de datos
-3. Contador simple y mejorado 
+3. Contador simple y mejorado
+  
+## useReducer
 
-## Estructura de carpetas
-  ~~~
-  * actions
-    - TYPES (un archivo Types por cada reducer)
-  * reducers
-    - initialState => usa nameInitialState
-    - init => usa nameInit
-    - reducer => usa nameReducer
-  * componentes
-  ~~~
-## useReducer () : reemplaza a "useState", recibe 3 parametros 
+- reemplaza a "useState", recibe 3 parámetros
+
   1. "state" => el estado anterior
   2. "initialState" => valor inicial debe ser un objeto que tenga la variable de estado
-  3. "init" => funcion que modifica el estado inicial (es opcional poco usado)
+  3. "init" => función que modifica el estado inicial (es opcional poco usado)
 
-## reducer(state,action) : función reductora, recibe 2 parametros
-  1. state: el estado anterior.
+~~~ js
+  useReducer(state,initialState,init)
+~~~
+
+## reducer
+
+- función reductora, recibe 2 parámetros
+
+  1. state: el estado anterior
   2. actions: Objeto que tiene 2 propiedades (los recibe del "dispatch")
-    * actions.type, el tipo de accion que va ejecutar (funcion o valores) .
-    * actions.payload, el nuevo valor que le enviamos para que modifique el estado(opcional) 
-  - Return: siempre retorna el valor del estado.
+     1. actions.type, el tipo de acción que va ejecutar (función o valores)
+     2. actions.payload, el nuevo valor que le enviamos para que modifique el estado(opcional)
 
-  ## dispatch() 
-  - reemplaza a "setState" envia un obj a reducer que modifica el estado 
+~~~ js
+  reducer(state,action){
+    switch(){
+
+    }
+    Return: siempre retorna el valor del estado.
+  }
+
+~~~
+
+
+## dispatch
+
+- Pasa un obj a reducer con el Type que modifica el estado, esta función reemplaza a setState
+
+  ~~~ js
+  dispatch( { type:" ", payload:" " } )
   ~~~
-  { type:" ", payload:" " }
-  ~~~ 
-  - payload es opcional.
 
-  ## state: 
-  - Obj que contiene el o los valores de estado a utilizar el los componentes 
+- payload es opcional.
+
+## state
+
+- Obj que contiene el o los valores de estado a utilizar el los componentes

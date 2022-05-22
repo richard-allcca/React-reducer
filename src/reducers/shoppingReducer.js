@@ -11,6 +11,7 @@ export const shoppingInitialState = {
   ],
   cart: [],
 };
+
 export function shoppingReducer(state, action) {
   switch (action.type) {
     case TYPES.ADD_TO_CART: {

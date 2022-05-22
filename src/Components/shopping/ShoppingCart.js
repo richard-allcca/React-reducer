@@ -1,9 +1,11 @@
 import { useReducer } from "react";
+// reducer
 import { TYPES } from "../../actions/shoppingAction";
 import {
   shoppingInitialState,
-  shoppingReducer,
+  shoppingReducer
 } from "../../reducers/shoppingReducer";
+// components
 import CartItem from "./CartItem";
 import ProductItem from "./ProductItem";
 import Total from "./Total";
@@ -31,12 +33,14 @@ const ShoppingCart = () => {
   return (
     <div>
       <h2>Shopping Cart</h2>
+
       <h3>Productos</h3>
       <article className="box grid-responsive">
         {products.map((product) => (
           <ProductItem key={product.id} data={product} addToCart={addToCart} />
         ))}
       </article>
+      
       <h3>Carrito</h3>
       <article className="box">
         <button onClick={clearCart}>Limpiar Carrito</button>
@@ -44,6 +48,7 @@ const ShoppingCart = () => {
           <CartItem key={index} data={item} delFromCart={delFromCart} />
         ))}
       </article>
+      
       <Total data={cart} />
     </div>
   );
