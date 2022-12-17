@@ -1,4 +1,4 @@
-# React Reducer 
+# React Reducer
 
 - Aqui encontraras conceptos generales y  3 ejemplos practicos
 
